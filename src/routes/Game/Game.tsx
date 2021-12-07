@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router';
 
 import { Button, H1, Text } from '../../components';
 
@@ -18,6 +19,14 @@ export default function Game() {
     wordsPositions,
     selectedWords,
   } = useWordcloud(2);
+
+  const navigate = useNavigate();
+
+  const currentPlayer = sessionStorage.getItem('user_nickName');
+
+  useEffect(() => {
+    if (!currentPlayer) navigate('/');
+  }, []);
 
   return (
     <Container>

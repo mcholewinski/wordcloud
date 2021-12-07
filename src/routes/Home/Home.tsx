@@ -48,7 +48,7 @@ export default function Home() {
         {highscore && (
           <>
             <Text isBold>Highscore:</Text>
-            <Text>{`${highscoreObj.nickName} - ${highscoreObj.score}`}</Text>
+            <Text>{`${highscoreObj.nickName} - ${highscoreObj.score} points`}</Text>
           </>
         )}
       </TitleWrapper>
