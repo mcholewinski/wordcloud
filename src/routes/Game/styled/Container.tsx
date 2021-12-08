@@ -5,6 +5,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 20px;
 
   & > h1 {
       text-transform: capitalize;

@@ -62,10 +62,12 @@ export function useWordcloud(scoreMultiplier: number): WordCloudI {
   }
 
   function handleWordClick(word: string) {
-    if (selectedWords.includes(word)) {
-      selectedWords.filter((item) => item !== word);
-    } else {
-      setSelectedWords((prev) => [...prev, word]);
+    if (!areAnswersChecked) {
+      if (selectedWords.includes(word)) {
+        setSelectedWords(selectedWords.filter((item) => item !== word));
+      } else {
+        setSelectedWords([...selectedWords, word]);
+      }
     }
   }
 
